@@ -1,0 +1,17 @@
+# .NET Core
+bin/
+obj/
+
+# Video artifacts
+*.mp4
+*.avi
+*.mkv
+
+# AI Models
+Models/*.onnx
+Models/*.pth
+Models/*.pt
+Models/*.bin
+
+# General
+.DS_Store
