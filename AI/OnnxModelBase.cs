@@ -16,6 +16,8 @@ namespace Enhancer.AI
 
         private void InitializeSession(int gpuDeviceId)
         {
+            if (!System.IO.File.Exists(_modelPath)) return;
+
             var options = new SessionOptions();
             
             // Enable CUDA

@@ -2,16 +2,18 @@
 
 A fully offline, local C# .NET 8 pipeline for enhancing football video footage using ONNX AI models.
 
-## Features (Phase 1)
+## Features (Phase 1 & 2)
 - **Modular Pipeline:** Setup using `Microsoft.ML.OnnxRuntime.Gpu` for fast inference.
 - **Video Processing:** OpenCV-powered `VideoProcessor` for reliable frame decoding/encoding.
 - **AI Routing Engine:** Timestamp-aware `AIPipelineController` for deciding when to run standard Super-Resolution vs. "Anime Power Mode" generation.
 - **CUDA Support:** Native GPU hardware acceleration hooks implemented via `OnnxModelBase`.
+- **Super-Resolution Engine:** Integrated `SuperResolutionEngine` utilizing ONNX inference for `Real-ESRGAN`.
+- **Memory Optimized Tensors:** High-performance `unsafe` memory conversion (`TensorUtils`) between OpenCV Mats and ONNX Float Tensors.
 
 ## Current Status
 - ✅ Project Foundation & Dependency Setup
 - ✅ Video I/O Pipeline implementation
-- ⏳ Phase 2: Super-Resolution Integration (Pending)
+- ✅ Phase 2: Super-Resolution Integration
 - ⏳ Phase 3: YOLOv8 Segmentation & Styling (Pending)
 - ⏳ Phase 4: Optical Flow Consistency (Pending)
 

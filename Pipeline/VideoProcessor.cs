@@ -31,9 +31,12 @@ namespace Enhancer.Pipeline
 
             Console.WriteLine($"Input Video: {width}x{height} @ {fps}fps. Total Frames: {totalFrames}");
 
-            // Note: In a real scenario with SR, the output width/height would be scaled up (e.g., width*4).
-            // For Phase 1, we keep it the same.
-            using var writer = new VideoWriter(_outputPath, FourCC.MP4V, fps, new Size(width, height));
+            // For Phase 2, we scale up by 4x.
+            int outWidth = width * 4;
+            int outHeight = height * 4;
+            Console.WriteLine($"Output Video (Upscaled): {outWidth}x{outHeight}");
+
+            using var writer = new VideoWriter(_outputPath, FourCC.MP4V, fps, new Size(outWidth, outHeight));
             if (!writer.IsOpened())
             {
                 Console.WriteLine($"Error: Cannot open output video file {_outputPath}");
